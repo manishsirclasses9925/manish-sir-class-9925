@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weekly Quiz - Manish Sir Class 9925</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.header {
+    background: #1976d2;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 27px;
+}
+
+.header p {
+    margin: 8px 0 0;
+}
+
+.quiz-container {
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.quiz-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #ddd;
+}
+
+.progress {
+    color: #1976d2;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: #f7f9fc;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.option:hover {
+    border-color: #1976d2;
+}
+
+.option.selected {
+    background: #e3f2fd;
+    border-color: #1976d2;
+}
+
+.next-btn,
+.submit-btn,
+.restart-btn {
+    border: none;
+    background: #1976d2;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.next-btn {
+    float: right;
+}
+
+.submit-btn {
+    background: #198754;
+}
+
+.clear {
+    clear: both;
+}
+
+.warning {
+    color: #d32f2f;
+    display: none;
+    margin-top: 12px;
+}
+
+#result {
+    display: none;
+}
+
+.result-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #ddd;
+}
+
+.result-score {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.review {
+    margin-top: 20px;
+}
+
+.review-item {
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    background: #f5f5f5;
+}
+
+.correct {
+    border-left: 5px solid #198754;
+}
+
+.wrong {
+    border-left: 5px solid #dc3545;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #555;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <h1>Manish Sir Class 9925</h1>
+
+    <p>Weekly Quiz Competition</p>
+
+</div>
+
+
+<div class="quiz-container">
+
+    <!-- QUIZ -->
+
+    <div class="quiz-box" id="quiz">
+
+        <div class="progress" id="progress">
+            Question 1 of 10
+        </div>
+
+        <div class="question" id="question">
+        </div>
+
+        <div id="options">
+        </div>
+
+        <div class="warning" id="warning">
+            Please select an answer first.
+        </div>
+
+        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+            Next Question
+        </button>
+
+        <div class="clear"></div>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div id="result">
+
+        <div class="result-box">
+
+            <h2 style="text-align:center;">
+                🎉 Quiz Completed!
+            </h2>
+
+            <div class="result-score" id="score">
+            </div>
+
+            <p id="resultText" style="text-align:center;">
+            </p>
+
+            <div class="review">
+
+                <h3>Answer Review</h3>
+
+                <div id="review">
+                </div>
+
+            </div>
+
+            <button class="restart-btn" onclick="restartQuiz()">
+                Try Again
+            </button>
+
+            <br>
+
+            <a class="home-btn" href="index.html">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   QUIZ QUESTIONS
+   बाद में इन्हें आपके असली questions से बदलेंगे
+   ========================================== */
+
+const questions = [
+
+    {
+        question: "What is democracy?",
+        options: [
+            "Rule by the people",
+            "Rule by one person",
+            "Rule by the army",
+            "Rule by a king"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Which institution makes laws in a democracy?",
+        options: [
+            "Parliament",
+            "Police",
+            "Army",
+            "Court"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is the minimum voting age in India?",
+        options: [
+            "16 years",
+            "18 years",
+            "21 years",
+            "25 years"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "Which country is known as the world's largest democracy?",
+        options: [
+            "India",
+            "China",
+            "Japan",
+            "Russia"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Who is the head of the Indian state?",
+        options: [
+            "Prime Minister",
+            "President",
+            "Chief Justice",
+            "Governor"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What does equality mean?",
+        options: [
+            "Equal rights and opportunities",
+            "Same job for everyone",
+            "Same income for everyone",
+            "No rules"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Which is a fundamental right in India?",
+        options: [
+            "Right to Equality",
+            "Right to unlimited wealth",
+            "Right to break laws",
+            "Right to avoid taxes"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Who elects representatives in a democracy?",
+        options: [
+            "Citizens",
+            "Army",
+            "Judges",
+            "Police"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is an election?",
+        options: [
+            "A process of choosing representatives",
+            "A court case",
+            "A government meeting",
+            "A school examination"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is the main purpose of voting?",
+        options: [
+            "To choose representatives",
+            "To pay taxes",
+            "To make laws directly",
+            "To become a judge"
+        ],
+        answer: 0
+    }
+
+];
+
+
+let currentQuestion = 0;
+
+let selectedAnswers = [];
+
+let submitted = false;
+
+
+/* SHOW QUESTION */
+
+function showQuestion() {
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("progress").innerText =
+        "Question " + (currentQuestion + 1) +
+        " of " + questions.length;
+
+    document.getElementById("question").innerText =
+        q.question;
+
+    const optionsBox =
+        document.getElementById("options");
+
+    optionsBox.innerHTML = "";
+
+    q.options.forEach(function(option, index) {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.innerText =
+            option;
+
+        button.onclick = function() {
+
+            selectOption(index, button);
+
+        };
+
+        optionsBox.appendChild(button);
+
+    });
+
+
+    document.getElementById("warning").style.display =
+        "none";
+
+
+    const nextBtn =
+        document.getElementById("nextBtn");
+
+
+    if (currentQuestion === questions.length - 1) {
+
+        nextBtn.innerText = "Submit Quiz";
+
+        nextBtn.className = "submit-btn";
+
+    } else {
+
+        nextBtn.innerText = "Next Question";
+
+        nextBtn.className = "next-btn";
+
+    }
+
+}
+
+
+/* SELECT ANSWER */
+
+function selectOption(index, button) {
+
+    selectedAnswers[currentQuestion] = index;
+
+    const buttons =
+        document.querySelectorAll(".option");
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove("selected");
+
+    });
+
+    button.classList.add("selected");
+
+    document.getElementById("warning").style.display =
+        "none";
+
+}
+
+
+/* NEXT / SUBMIT */
+
+function nextQuestion() {
+
+    if (selectedAnswers[currentQuestion] === undefined) {
+
+        document.getElementById("warning").style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    if (currentQuestion <
+        questions.length - 1) {
+
+        currentQuestion++;
+
+        showQuestion();
+
+    } else {
+
+        submitQuiz();
+
+    }
+
+}
+
+
+/* SUBMIT QUIZ */
+
+function submitQuiz() {
+
+    if (submitted) return;
+
+    submitted = true;
+
+    let correct = 0;
+
+    let wrong = 0;
+
+
+    for (let i = 0; i < questions.length; i++) {
+
+        if (selectedAnswers[i] === questions[i].answer) {
+
+            correct++;
+
+        } else {
+
+            wrong++;
+
+        }
+
+    }
+
+
+    const total =
+        questions.length;
+
+    const percentage =
+        Math.round((correct / total) * 100);
+
+
+    document.getElementById("quiz").style.display =
+        "none";
+
+    document.getElementById("result").style.display =
+        "block";
+
+
+    document.getElementById("score").innerText =
+        correct + " / " + total;
+
+
+    document.getElementById("resultText").innerText =
+        "Correct: " + correct +
+        " | Wrong: " + wrong +
+        " | Percentage: " + percentage + "%";
+
+
+    showReview();
+
+}
+
+
+/* ANSWER REVIEW */
+
+function showReview() {
+
+    let reviewHTML = "";
+
+
+    for (let i = 0; i < questions.length; i++) {
+
+        const q =
+            questions[i];
+
+        const userAnswer =
+            selectedAnswers[i];
+
+        const correctAnswer =
+            q.answer;
+
+
+        if (userAnswer === correctAnswer) {
+
+            reviewHTML +=
+
+            '<div class="review-item correct">' +
+
+            '<b>Question ' + (i + 1) + '</b><br><br>' +
+
+            q.question +
+
+            '<br><br>' +
+
+            'Your Answer: ' +
+
+            q.options[userAnswer] +
+
+            '<br>' +
+
+            '✅ Correct' +
+
+            '</div>';
+
+        } else {
+
+            reviewHTML +=
+
+            '<div class="review-item wrong">' +
+
+            '<b>Question ' + (i + 1) + '</b><br><br>' +
+
+            q.question +
+
+            '<br><br>' +
+
+            'Your Answer: ' +
+
+            q.options[userAnswer] +
+
+            '<br>' +
+
+            'Correct Answer: ' +
+
+            q.options[correctAnswer] +
+
+            '<br>' +
+
+            '❌ Wrong' +
+
+            '</div>';
+
+        }
+
+    }
+
+
+    document.getElementById("review").innerHTML =
+        reviewHTML;
+
+}
+
+
+/* RESTART */
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    selectedAnswers = [];
+
+    submitted = false;
+
+    document.getElementById("quiz").style.display =
+        "block";
+
+    document.getElementById("result").style.display =
+        "none";
+
+    showQuestion();
+
+}
+
+
+/* START */
+
+showQuestion();
+
+</script>
+
+</body>
+</html>
