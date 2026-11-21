@@ -1,137 +1,94 @@
+RBSE Class 10 Mathematics – HTML Code
+Copy the code below and paste it into the GitHub file rbse-class10-maths.html.
+Note: This file contains 14 chapter notes, formulas, worked examples and MCQ practice. It does not yet contain every textbook exercise solution.
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RBSE Class 10 Mathematics</title>
+<title>RBSE Class 10 Mathematics | Manish Sir Classes</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#172033}
-header{background:#123b70;color:white;padding:22px 15px;text-align:center}
-header h1{margin:0;font-size:24px}
-header p{margin:8px 0 0}
-main{max-width:850px;margin:20px auto;padding:12px}
-.panel{background:white;padding:18px;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 8px #00000012}
-.chapter{display:block;text-decoration:none;background:#fff;border:1px solid #dce4ef;
-padding:15px;margin:10px 0;border-radius:9px;color:#123b70;font-weight:bold}
-.chapter:hover{background:#eaf2ff}
-button{border:0;background:#123b70;color:white;padding:11px 15px;border-radius:7px;cursor:pointer}
-.hidden{display:none}
-h2{color:#123b70}
-details{background:#f3f6fb;padding:12px;border-radius:8px;margin:10px 0}
-summary{cursor:pointer;font-weight:bold;color:#123b70}
-.back{margin-bottom:15px}
-footer{text-align:center;padding:20px;color:#667085}
+:root{--navy:#12345a;--blue:#1769aa;--light:#eef5fc;--ink:#1d2939;--green:#16845b}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:var(--ink);line-height:1.6}
+header{background:linear-gradient(120deg,#102d50,#1769aa);color:#fff;padding:24px 16px;text-align:center}
+header h1{font-size:24px;margin:0 0 5px}header p{margin:0;font-size:14px}
+.wrap{max-width:1100px;margin:auto;padding:16px}
+.topnote{background:#fff7df;border-left:4px solid #e5a000;padding:12px;border-radius:8px;margin:14px 0;font-size:14px}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:16px;align-items:start}
+aside,.content{background:#fff;border-radius:12px;box-shadow:0 2px 12px #122b4510}
+aside{padding:14px;position:sticky;top:10px;max-height:85vh;overflow:auto}
+aside h2{font-size:18px;margin:0 0 10px;color:var(--navy)}
+.chapter-btn{display:block;width:100%;text-align:left;padding:10px;margin:5px 0;border:1px solid #dce5ef;border-radius:8px;background:#fff;color:#24364b;cursor:pointer;font-size:14px}
+.chapter-btn.active,.chapter-btn:hover{background:var(--light);border-color:var(--blue);color:var(--blue);font-weight:bold}
+.content{padding:20px;min-height:500px}.content h2{color:var(--navy);margin-top:0}
+h3{color:#174f80;margin:22px 0 8px;font-size:18px}
+p{margin:8px 0}.formula{background:#edf5ff;border-left:4px solid var(--blue);padding:10px 12px;border-radius:6px;margin:8px 0;font-weight:600}
+.card{border:1px solid #e1e8f0;border-radius:9px;padding:13px;margin:10px 0;background:#fff}
+details{background:#f8fafc;border:1px solid #dce5ef;border-radius:8px;padding:10px;margin:10px 0}
+summary{cursor:pointer;font-weight:bold;color:#174f80}
+.solution{padding:8px 4px 2px}
+.tag{display:inline-block;background:#e8f4ee;color:#116444;border-radius:20px;padding:3px 9px;font-size:12px;margin:2px}
+button.action{background:var(--blue);color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;margin:6px 4px 6px 0}
+button.secondary{background:#e9eef5;color:#18324d}
+.quiz-q{padding:12px;border:1px solid #e1e8f0;border-radius:9px;margin:12px 0}
+.quiz-q label{display:block;margin:6px 0;cursor:pointer}
+#result{font-weight:bold;margin-top:10px}
+footer{text-align:center;color:#667085;font-size:13px;padding:25px}
+a{color:#1769aa}
+@media(max-width:760px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none}.content{padding:15px}header h1{font-size:21px}}
 </style>
 </head>
 <body>
-<header>
-<h1>Manish Sir Classes</h1>
-<p>RBSE Class 10 – Mathematics</p>
-</header>
-
-<main>
-<section id="chapterList" class="panel">
-<h2>Mathematics – All Chapters</h2>
-<p>Select a chapter to study notes, formulas and solutions.</p>
-<div id="chapters"></div>
-</section>
-
-<section id="chapterContent" class="panel hidden">
-<button class="back" onclick="showChapters()">← All Chapters</button>
-<h2 id="chapterTitle"></h2>
-<div id="chapterDetails"></div>
-</section>
-</main>
-
-<footer>Manish Sir Classes | RBSE Class 10 Mathematics</footer>
-
+<header><h1>MANISH SIR CLASSES 9925</h1><p>RBSE Class 10 Mathematics | Notes • Formulae • Solved Examples • Practice</p></header>
+<div class="wrap">
+<div class="topnote"><b>Study note:</b> This is a single-file chapter learning website. The notes and examples below are original learning material. For exact textbook exercise wording and the latest prescribed syllabus, use the official NCERT/RBSE book links. This page does not claim that every textbook exercise question is included.</div>
+<div class="layout">
+<aside><h2>Mathematics Chapters</h2><div id="chapterList"></div></aside>
+<main class="content" id="chapterContent" aria-live="polite"></main>
+</div>
+</div>
+<footer>Manish Sir Classes 9925 • RBSE Class 10 Mathematics</footer>
 <script>
-const chapterNames = [
-"Real Numbers",
-"Polynomials",
-"Pair of Linear Equations in Two Variables",
-"Quadratic Equations",
-"Arithmetic Progressions",
-"Triangles",
-"Coordinate Geometry",
-"Introduction to Trigonometry",
-"Some Applications of Trigonometry",
-"Circles",
-"Areas Related to Circles",
-"Surface Areas and Volumes",
-"Statistics",
-"Probability"
+const chapters = [
+{title:"Real Numbers",topics:["Euclid's division algorithm","Fundamental theorem of arithmetic","HCF and LCM","Irrational numbers"],notes:["Every composite positive integer can be expressed as a product of primes, and this factorisation is unique apart from the order of the primes.","For two positive integers a and b, a = bq + r, where 0 ≤ r < b. Repeated division can be used to find HCF.","For two positive integers: HCF × LCM = product of the numbers."],formulas:["a = bq + r, 0 ≤ r < b","HCF(a,b) × LCM(a,b) = a × b"],examples:[["Find HCF of 135 and 225.","225 = 135 × 1 + 90<br>135 = 90 × 1 + 45<br>90 = 45 × 2 + 0<br><b>HCF = 45.</b>"],["Find the prime factorisation of 156.","156 = 2 × 78 = 2 × 2 × 39 = <b>2² × 3 × 13.</b>"]],quiz:[["The HCF of 18 and 24 is:",["3","6","9","12"],1],["The prime factorisation of 30 is:",["2 × 3 × 5","3 × 10","2 × 15","5 × 6"],0]]},
+{title:"Polynomials",topics:["Zeroes of a polynomial","Relationship between zeroes and coefficients","Division algorithm"],notes:["A polynomial is an algebraic expression in which the powers of the variable are non-negative integers.","For a quadratic polynomial ax² + bx + c, if zeroes are α and β, then α + β = −b/a and αβ = c/a.","A number k is a zero of p(x) if p(k) = 0."],formulas:["For ax² + bx + c: α + β = −b/a","αβ = c/a","Dividend = Divisor × Quotient + Remainder"],examples:[["Find the zeroes of x² − 5x + 6.","x² − 5x + 6 = (x − 2)(x − 3).<br>Therefore, x = 2 or x = 3.<br><b>Zeroes: 2 and 3.</b>"],["Check the sum and product for x² − 7x + 10.","Factorising: (x − 5)(x − 2). Zeroes are 5 and 2.<br>Sum = 5 + 2 = 7 = −(−7)/1.<br>Product = 5 × 2 = 10 = 10/1."]],quiz:[["The sum of zeroes of 2x² − 6x + 4 is:",["−3","3","2","−2"],1],["If p(2) = 0, then 2 is a:",["coefficient","degree","zero","constant"],2]]},
+{title:"Pair of Linear Equations in Two Variables",topics:["Standard form","Graphical meaning","Consistency of equations","Methods of solution"],notes:["A pair of linear equations has the form a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0.","A unique solution means the two lines intersect. No solution means they are parallel. Infinitely many solutions mean the lines coincide.","For a unique solution, a₁/a₂ ≠ b₁/b₂."],formulas:["a₁/a₂ ≠ b₁/b₂: unique solution","a₁/a₂ = b₁/b₂ ≠ c₁/c₂: no solution","a₁/a₂ = b₁/b₂ = c₁/c₂: infinitely many solutions"],examples:[["Solve x + y = 7 and x − y = 1.","Add the equations: 2x = 8, so x = 4.<br>Put x = 4 in x + y = 7: y = 3.<br><b>Solution: x = 4, y = 3.</b>"],["Solve 2x + y = 8 and x + y = 5.","Subtract the second equation from the first: x = 3.<br>Put x = 3 in x + y = 5: y = 2.<br><b>Solution: (3, 2).</b>"]],quiz:[["The graph of a linear equation in two variables is a:",["circle","straight line","curve","point"],1],["If two lines intersect at one point, the pair has:",["no solution","one solution","infinite solutions","two solutions"],1]]},
+{title:"Quadratic Equations",topics:["Standard form","Factorisation method","Quadratic formula","Nature of roots"],notes:["A quadratic equation has the standard form ax² + bx + c = 0, where a ≠ 0.","The discriminant D = b² − 4ac tells the nature of roots.","If D is positive, roots are real and distinct; if D is zero, roots are real and equal; if D is negative, there are no real roots."],formulas:["x = [−b ± √(b² − 4ac)] / 2a","D = b² − 4ac"],examples:[["Solve x² − 5x + 6 = 0.","x² − 5x + 6 = 0<br>(x − 2)(x − 3) = 0<br>x − 2 = 0 or x − 3 = 0.<br><b>x = 2 or x = 3.</b>"],["Find the discriminant of 2x² − 4x + 2 = 0.","a = 2, b = −4, c = 2.<br>D = b² − 4ac = 16 − 16 = 0.<br><b>Roots are real and equal.</b>"]],quiz:[["The degree of a quadratic equation is:",["1","2","3","0"],1],["If D = 0, the roots are:",["imaginary","unequal","real and equal","not defined"],2]]},
+{title:"Arithmetic Progressions",topics:["Common difference","nth term","Sum of n terms"],notes:["An arithmetic progression (AP) is a sequence in which the difference between consecutive terms is constant.","The constant difference is called the common difference (d).","The first term is a and the number of terms is n."],formulas:["aₙ = a + (n − 1)d","Sₙ = n/2 [2a + (n − 1)d]","Sₙ = n/2 (a + l)"],examples:[["Find the 10th term of 3, 7, 11, ...","a = 3, d = 4, n = 10.<br>a₁₀ = 3 + (10 − 1) × 4 = 3 + 36.<br><b>a₁₀ = 39.</b>"],["Find the sum of first 10 natural numbers.","a = 1, d = 1, n = 10.<br>S₁₀ = 10/2 [2 + 9] = 5 × 11.<br><b>S₁₀ = 55.</b>"]],quiz:[["The common difference of 5, 9, 13, ... is:",["2","3","4","5"],2],["The nth term of an AP is:",["a + nd","a + (n − 1)d","nd","a − d"],1]]},
+{title:"Triangles",topics:["Similar triangles","Basic proportionality theorem","Similarity criteria"],notes:["Two triangles are similar if their corresponding angles are equal and corresponding sides are proportional.","AAA, SSS and SAS are common similarity criteria.","The Basic Proportionality Theorem states that a line drawn parallel to one side of a triangle divides the other two sides in the same ratio."],formulas:["If ΔABC ~ ΔDEF, then AB/DE = BC/EF = AC/DF","If DE ∥ BC, then AD/DB = AE/EC"],examples:[["Two similar triangles have corresponding sides 3 cm and 6 cm. Find the scale factor from the smaller to the larger.","Scale factor = corresponding side of larger / corresponding side of smaller = 6/3.<br><b>Scale factor = 2.</b>"],["In a triangle, DE ∥ BC, AD = 2 cm, DB = 3 cm and AE = 4 cm. Find EC.","By BPT, AD/DB = AE/EC.<br>2/3 = 4/EC.<br>2 × EC = 12, so <b>EC = 6 cm.</b>"]],quiz:[["Similar triangles have equal corresponding:",["areas only","angles","perimeters only","heights only"],1],["BPT is also called:",["Pythagoras theorem","Thales theorem","Euclid theorem","Remainder theorem"],1]]},
+{title:"Coordinate Geometry",topics:["Distance formula","Section formula","Midpoint formula"],notes:["Coordinate geometry uses ordered pairs (x, y) to locate points on a plane.","The distance formula gives the length between two points.","The section formula gives the coordinates of a point dividing a line segment in a given ratio."],formulas:["Distance = √[(x₂ − x₁)² + (y₂ − y₁)²]","Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)","Section (m:n) = ((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n))"],examples:[["Find the distance between (1, 2) and (4, 6).","d = √[(4 − 1)² + (6 − 2)²]<br>= √(9 + 16) = √25.<br><b>Distance = 5 units.</b>"],["Find the midpoint of (2, 4) and (6, 8).","Midpoint = ((2 + 6)/2, (4 + 8)/2)<br>= (8/2, 12/2).<br><b>Midpoint = (4, 6).</b>"]],quiz:[["The distance formula is based on:",["BPT","Pythagoras theorem","AP","probability"],1],["The midpoint of (0,0) and (4,6) is:",["(4,6)","(2,3)","(1,3)","(2,6)"],1]]},
+{title:"Introduction to Trigonometry",topics:["Trigonometric ratios","Standard angle values","Identities"],notes:["In a right-angled triangle, trigonometric ratios compare the sides with respect to an acute angle θ.","The opposite side is perpendicular, the adjacent side is base, and the longest side is hypotenuse.","Learn standard values for 0°, 30°, 45°, 60° and 90°."],formulas:["sin θ = Perpendicular/Hypotenuse","cos θ = Base/Hypotenuse","tan θ = Perpendicular/Base","sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ"],examples:[["If perpendicular = 3 and hypotenuse = 5, find sin θ.","sin θ = Perpendicular/Hypotenuse = 3/5.<br><b>sin θ = 3/5.</b>"],["If tan θ = 3/4, find sin θ (θ acute).","Take perpendicular = 3 and base = 4.<br>Hypotenuse = √(3² + 4²) = 5.<br><b>sin θ = 3/5.</b>"]],quiz:[["sin 30° equals:",["0","1/2","√3/2","1"],1],["The value of sin²θ + cos²θ is:",["0","1","2","tan θ"],1]]},
+{title:"Some Applications of Trigonometry",topics:["Line of sight","Angle of elevation","Angle of depression"],notes:["The angle of elevation is the angle between the horizontal line and the line of sight when an object is above the observer.","The angle of depression is formed when the object is below the observer's horizontal line.","Draw a right triangle, mark the known height or distance, then select the suitable trigonometric ratio."],formulas:["tan θ = Height/Horizontal distance","sin θ = Height/Line of sight","cos θ = Horizontal distance/Line of sight"],examples:[["A pole is 10 m high. Find the distance from its foot if the angle of elevation is 45°.","tan 45° = 10/d<br>1 = 10/d, so d = 10.<br><b>Distance = 10 m.</b>"],["A kite string is 20 m long and makes 30° with the ground. Find its height, assuming the string is straight.","sin 30° = h/20<br>1/2 = h/20<br><b>h = 10 m.</b>"]],quiz:[["Angle of elevation is measured from the:",["vertical line","horizontal line","ground only","north direction"],1],["tan θ is equal to:",["base/height","height/base","hypotenuse/base","base/hypotenuse"],1]]},
+{title:"Circles",topics:["Tangent to a circle","Radius and tangent","Number of tangents"],notes:["A tangent touches a circle at exactly one point.","The radius through the point of contact is perpendicular to the tangent.","Tangents drawn from an external point to a circle are equal in length."],formulas:["OT ⟂ PT at point of contact T","PA = PB (tangents from an external point)"],examples:[["A tangent PT touches a circle at T. What is the angle between OT and PT?","The radius drawn to the point of contact is perpendicular to the tangent.<br><b>Angle OTP = 90°.</b>"],["Two tangents PA and PB are drawn from an external point P. If PA = 7 cm, find PB.","Tangents from the same external point are equal.<br>PB = PA = <b>7 cm.</b>"]],quiz:[["A tangent touches a circle at:",["one point","two points","three points","no point"],0],["Radius at the point of contact is:",["parallel to tangent","perpendicular to tangent","equal to tangent","twice tangent"],1]]},
+{title:"Areas Related to Circles",topics:["Circumference","Area of a circle","Sector and arc"],notes:["The circumference is the boundary length of a circle.","A sector is the region enclosed by two radii and the corresponding arc.","Use π = 22/7 or 3.14 as directed in the question."],formulas:["Circumference = 2πr","Area = πr²","Area of sector = (θ/360°) × πr²","Length of arc = (θ/360°) × 2πr"],examples:[["Find the circumference of a circle of radius 7 cm. Use π = 22/7.","C = 2πr = 2 × 22/7 × 7.<br><b>C = 44 cm.</b>"],["Find the area of a circle of radius 3 cm. Use π = 3.14.","A = πr² = 3.14 × 3 × 3.<br><b>A = 28.26 cm².</b>"]],quiz:[["Area of a circle is:",["2πr","πr²","πd","r²"],1],["Circumference of a circle is:",["πr²","2πr","πr","r/2"],1]]},
+{title:"Surface Areas and Volumes",topics:["Cuboid and cube","Cylinder and cone","Sphere and hemisphere"],notes:["Surface area measures the outer covering of a solid. Volume measures the space occupied by it.","Write all dimensions in the same unit before using a formula.","Use square units for area and cubic units for volume."],formulas:["Cuboid: V = lbh; TSA = 2(lb + bh + hl)","Cylinder: V = πr²h; CSA = 2πrh","Cone: V = (1/3)πr²h; l = √(r² + h²)","Sphere: V = (4/3)πr³; SA = 4πr²","Hemisphere: V = (2/3)πr³; CSA = 2πr²"],examples:[["Find the volume of a cylinder with radius 2 cm and height 7 cm. Use π = 22/7.","V = πr²h = 22/7 × 2² × 7<br>= 22 × 4.<br><b>Volume = 88 cm³.</b>"],["Find the volume of a cube of side 4 cm.","V = side³ = 4³.<br><b>Volume = 64 cm³.</b>"]],quiz:[["Volume is measured in:",["cm","cm²","cm³","m"],2],["Volume of a cylinder is:",["πrh","πr²h","2πrh","πr²"],1]]},
+{title:"Statistics",topics:["Mean","Median","Mode","Cumulative frequency"],notes:["Statistics deals with the collection, organisation, presentation and interpretation of data.","Mean is the sum of observations divided by the number of observations. For grouped data, use class marks.","Median is the middle value and mode is the value with the highest frequency."],formulas:["Mean = Σfᵢxᵢ / Σfᵢ","Median = l + [(N/2 − cf)/f] × h","Mode = l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h"],examples:[["Find the mean of 2, 4, 6, 8.","Mean = (2 + 4 + 6 + 8)/4 = 20/4.<br><b>Mean = 5.</b>"],["Find the median of 3, 5, 7, 9, 11.","There are 5 observations. The middle (3rd) value is 7.<br><b>Median = 7.</b>"]],quiz:[["The average of observations is called:",["mode","mean","range","frequency"],1],["The value occurring most often is:",["mean","median","mode","class mark"],2]]},
+{title:"Probability",topics:["Random experiment","Event","Theoretical probability"],notes:["Probability measures how likely an event is to happen.","For equally likely outcomes, probability is the number of favourable outcomes divided by the total number of outcomes.","Probability always lies between 0 and 1."],formulas:["P(E) = Number of favourable outcomes / Total number of equally likely outcomes","P(not E) = 1 − P(E)","0 ≤ P(E) ≤ 1"],examples:[["A fair die is rolled. Find the probability of getting 4.","Favourable outcomes = 1; total outcomes = 6.<br><b>P(4) = 1/6.</b>"],["A coin is tossed once. Find the probability of getting a head.","Outcomes are H and T. Favourable outcomes = 1; total = 2.<br><b>P(H) = 1/2.</b>"]],quiz:[["Probability of a sure event is:",["0","1/2","1","2"],2],["A fair die has how many possible outcomes?",["4","5","6","8"],2]]}
 ];
-
-const chaptersDiv = document.getElementById("chapters");
-
-chapterNames.forEach((name,index)=>{
- const link=document.createElement("a");
- link.className="chapter";
- link.href="#chapter-"+(index+1);
- link.textContent="Chapter "+(index+1)+" – "+name;
- link.onclick=(event)=>{
-   event.preventDefault();
-   openChapter(index);
- };
- chaptersDiv.appendChild(link);
-});
-
-function showChapters(){
- document.getElementById("chapterList").classList.remove("hidden");
- document.getElementById("chapterContent").classList.add("hidden");
- history.replaceState(null,"",location.pathname);
+const list=document.getElementById('chapterList'), content=document.getElementById('chapterContent');
+function showChapter(i){
+ document.querySelectorAll('.chapter-btn').forEach((b,n)=>b.classList.toggle('active',n===i));
+ const c=chapters[i];
+ let s=`<h2>Chapter ${i+1}: ${c.title}</h2><div><span class="tag">RBSE Class 10</span><span class="tag">Easy English</span><span class="tag">Revision Notes</span></div>`;
+ s+='<h3>Important Topics</h3><ul>'+c.topics.map(x=>`<li>${x}</li>`).join('')+'</ul>';
+ s+='<h3>Short Notes</h3>'+c.notes.map(x=>`<div class="card">${x}</div>`).join('');
+ s+='<h3>Important Formulae</h3>'+c.formulas.map(x=>`<div class="formula">${x}</div>`).join('');
+ s+='<h3>Step-by-Step Solved Examples</h3>'+c.examples.map((e,j)=>`<details><summary>Example ${j+1}: ${e[0]}</summary><div class="solution">${e[1]}</div></details>`).join('');
+ s+='<h3>Chapter MCQ Practice</h3><div id="quizArea"></div><button class="action" onclick="checkQuiz()">Check Answers</button><button class="action secondary" onclick="resetQuiz()">Reset</button><div id="result"></div>';
+ s+='<h3>Textbook and Official Study Links</h3><p>Open the official NCERT Class 10 Mathematics textbook page and select the matching chapter: <a href="https://ncert.nic.in/textbook.php?jemh1=10-14" target="_blank" rel="noopener">NCERT Mathematics textbook (Chapters 1–14)</a>.</p><p>Check the current RBSE syllabus before final exam preparation: <a href="https://rajeduboard.rajasthan.gov.in/" target="_blank" rel="noopener">Board of Secondary Education Rajasthan</a>.</p>';
+ content.innerHTML=s;
+ const q=document.getElementById('quizArea');
+ q.innerHTML=c.quiz.map((item,j)=>`<div class="quiz-q"><b>Q${j+1}. ${item[0]}</b>${item[1].map((o,k)=>`<label><input type="radio" name="q${j}" value="${k}"> ${String.fromCharCode(65+k)}. ${o}</label>`).join('')}</div>`).join('');
 }
-
-function openChapter(index){
- const number=index+1;
- document.getElementById("chapterList").classList.add("hidden");
- document.getElementById("chapterContent").classList.remove("hidden");
- document.getElementById("chapterTitle").textContent=
- "Chapter "+number+" – "+chapterNames[index];
-
- let content="";
-
- if(number===1){
- content=`
- <h3>Short Notes</h3>
- <p>Real Numbers include rational and irrational numbers.</p>
- <p><b>Rational Numbers:</b> Numbers that can be written in the form p/q, where q is not zero.</p>
- <p><b>Irrational Numbers:</b> Numbers that cannot be written in the form p/q.</p>
- <h3>Important Formula</h3>
- <p>For two positive integers:</p>
- <p>HCF × LCM = Product of the two numbers</p>
- <h3>Example Questions</h3>
- <details>
- <summary>Question 1: Find the HCF of 12 and 18.</summary>
- <p>12 = 2 × 2 × 3</p>
- <p>18 = 2 × 3 × 3</p>
- <p>Common factors = 2 × 3</p>
- <b>HCF = 6</b>
- </details>
- <details>
- <summary>Question 2: Find the LCM of 12 and 18.</summary>
- <p>12 = 2² × 3</p>
- <p>18 = 2 × 3²</p>
- <p>LCM = 2² × 3² = 36</p>
- <b>Answer = 36</b>
- </details>
- `;
- }else{
- content=`
- <h3>Chapter Notes</h3>
- <p>Notes for ${chapterNames[index]} will be added here.</p>
- <h3>Important Formulas</h3>
- <p>Chapter-wise formulas will be provided here.</p>
- <h3>Textbook Questions and Solutions</h3>
- <p>All textbook exercise questions with step-by-step solutions will be added here after checking the prescribed RBSE textbook.</p>
- `;
- }
-
- document.getElementById("chapterDetails").innerHTML=content;
- history.replaceState(null,"","#chapter-"+number);
+function checkQuiz(){
+ const i=[...document.querySelectorAll('.chapter-btn')].findIndex(b=>b.classList.contains('active'));
+ let score=0,answered=0;
+ chapters[i].quiz.forEach((q,j)=>{const a=document.querySelector(`input[name="q${j}"]:checked`);if(a){answered++;if(Number(a.value)===q[2])score++;}});
+ document.getElementById('result').textContent=`Your score: ${score}/${chapters[i].quiz.length} (${answered} answered).`;
 }
+function resetQuiz(){document.querySelectorAll('#quizArea input').forEach(x=>x.checked=false);document.getElementById('result').textContent='';}
+chapters.forEach((c,i)=>{const b=document.createElement('button');b.className='chapter-btn';b.textContent=`Chapter ${i+1}: ${c.title}`;b.onclick=()=>showChapter(i);list.appendChild(b);});
+showChapter(0);
 </script>
 </body>
 </html>
